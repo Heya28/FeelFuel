@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Detection Chatbot</title>
+    <link rel="stylesheet" href="question1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <h3 onclick="goBack()">Go Back</h3>
+        <img src="../images/logoo.png" " alt="logo">
+        
+    </nav>
+
+    <div id="question1">
+        <h1>How are you feeling right now?</h1>
+
+        <div id="mood-options" class="mood-options">
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b0d4b670-66f7-465e-855e-e3a06f6cbf12/dh7mxv8-6c4c2aa3-5d44-4339-a669-3db581d95b36.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IwZDRiNjcwLTY2ZjctNDY1ZS04NTVlLWUzYTA2ZjZjYmYxMlwvZGg3bXh2OC02YzRjMmFhMy01ZDQ0LTQzMzktYTY2OS0zZGI1ODFkOTViMzYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.hcUMFQ9Qp76tBVk0L0Z8H-WkMG1Vc9qcJNURwkUd94Q"
+                alt="Happiness" class="emotion-img" onclick="selectMood('Happiness')" />
+
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a5571bb3-36d6-4fe5-9ec4-2c1693be6176/dhmh9np-862e1895-e6a9-460f-a3e1-0bdca8b50928.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2E1NTcxYmIzLTM2ZDYtNGZlNS05ZWM0LTJjMTY5M2JlNjE3NlwvZGhtaDlucC04NjJlMTg5NS1lNmE5LTQ2MGYtYTNlMS0wYmRjYThiNTA5MjgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.rDLb_3IrDjs8InUTgrmE1zAHaiaP7ElczQvO0PqhDLw"
+                alt="Sadness" onclick="selectMood('Sadness')" class="emotion-img" />
+
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a5571bb3-36d6-4fe5-9ec4-2c1693be6176/dhmh8z2-744dffa9-eb5f-4cf4-a8cc-ff34e574be54.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2E1NTcxYmIzLTM2ZDYtNGZlNS05ZWM0LTJjMTY5M2JlNjE3NlwvZGhtaDh6Mi03NDRkZmZhOS1lYjVmLTRjZjQtYThjYy1mZjM0ZTU3NGJlNTQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.nR4DU8CbFtctiAD7A_qqfdUYKMDavWeIfoqldPHpjtM"
+                alt="Fear" class="emotion-img" onclick="selectMood('Fear')" />
+
+            <img src="https://i.pinimg.com/originals/c9/20/b4/c920b4408d20a6150b902ac435ebd2cc.png" alt="Anger"
+                class="emotion-img" onclick="selectMood('Anger')" />
+
+            <img src="https://i.pinimg.com/originals/59/42/d9/5942d9add3506de9b7f1a25a278c69c6.png" alt="Disgust"
+                class="emotion-img" onclick="selectMood('Disgust')" />
+
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1ebd221d-3581-4775-8f4c-086c377bc4c3/dgfo4uj-47fe9f6f-9f2b-4499-8397-96f5073c8ca6.png/v1/fill/w_1280,h_854/inside_out_2_anxiety_png_by_docbuffflash82_dgfo4uj-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODU0IiwicGF0aCI6IlwvZlwvMWViZDIyMWQtMzU4MS00Nzc1LThmNGMtMDg2YzM3N2JjNGMzXC9kZ2ZvNHVqLTQ3ZmU5ZjZmLTlmMmItNDQ5OS04Mzk3LTk2ZjUwNzNjOGNhNi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.le2R8A7fsthO6g1mij59Cwk6thEgSjibEsErwuySf6I"
+                alt="Anxiety" class="emotion-img" onclick="selectMood('Anxiety')" />
+
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2da86174-044b-4355-b01a-f7e55be1daf7/dhlsjmu-b35bb78e-f030-4c57-8c38-55e0cd9d68be.png/v1/fill/w_1280,h_1418/inside_out_2_envy_render_png_by_frxnmntti_dhlsjmu-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQxOCIsInBhdGgiOiJcL2ZcLzJkYTg2MTc0LTA0NGItNDM1NS1iMDFhLWY3ZTU1YmUxZGFmN1wvZGhsc2ptdS1iMzViYjc4ZS1mMDMwLTRjNTctOGMzOC01NWUwY2Q5ZDY4YmUucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.HJwKoanYeFwokt0DgIBOLYARii7sWjfThfJ7Cc3QUAE"
+                alt="Envy" class="emotion-img" onclick="selectMood('Envy')" />
+
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1ebd221d-3581-4775-8f4c-086c377bc4c3/dh1x5bx-a761fedc-a720-40d6-a5c2-3e8194c1321c.png/v1/fill/w_1095,h_730/inside_out_2_embarassment_png_by_docbuffflash82_dh1x5bx-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODU0IiwicGF0aCI6IlwvZlwvMWViZDIyMWQtMzU4MS00Nzc1LThmNGMtMDg2YzM3N2JjNGMzXC9kaDF4NWJ4LWE3NjFmZWRjLWE3MjAtNDBkNi1hNWMyLTNlODE5NGMxMzIxYy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.-_ndI5vo13B6LVfj096puzVQjw1svohGhz0HVy019L0"
+                alt="Embarrassment" class="emotion-img" onclick="selectMood('Embarrassment')" />
+
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/846a9086-8a40-43e0-aa10-2fc7d6d73730/dhkzosh-7f43f3f4-d026-4e31-be98-f5d08a231e94.png/v1/fill/w_728,h_1098/inside_out_2__2024__ennui_v_2_png__by_mintmovi3_dhkzosh-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI0NyIsInBhdGgiOiJcL2ZcLzg0NmE5MDg2LThhNDAtNDNlMC1hYTEwLTJmYzdkNmQ3MzczMFwvZGhrem9zaC03ZjQzZjNmNC1kMDI2LTRlMzEtYmU5OC1mNWQwOGEyMzFlOTQucG5nIiwid2lkdGgiOiI8PTgyNyJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.MVV4ogYfoZa4p1a63qBGixHbEpHS2wAmyoVweHXdjp8"
+                alt="Ennui" class="emotion-img" onclick="selectMood('Ennui')" />
+        </div>
+        <div id="moodvalues">
+            <span class="popup">Joy</span>
+            <span class="popup">Sadness</span>
+            <span class="popup">Fear</span>
+            <span class="popup">Anger</span>
+            <span class="popup">Disgust</span>
+            <span class="popup">Anxiety</span>
+            <span class="popup">Envy</span>
+            <span class="popup">Embarrasment</span>
+            <span class="popup">Ennui</span>
+        </div>
+    </div> <!--question1 -->
+
+    <script src="question1.js"></script>
+</body>
+
+</html>

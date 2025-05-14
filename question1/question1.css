@@ -1,0 +1,254 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eaebc4;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100%;
+    margin: 0;
+
+    /* background: linear-gradient(-45deg, #7f4f24,#7f4f24,#7f4f24,#7f4f24);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh; */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Basic styling for the navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    /* Center the contents */
+    align-items: center;
+    /* Vertically align the content */
+    background-color: #333;
+    /* Dark background for contrast */
+    padding: 15px 30px;
+    /* Some padding for a more spaced-out look */
+    position: fixed;
+    /* Fix the navigation to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    /* Ensure the nav stays in front */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Light shadow for depth */
+}
+
+/* Styling for the logo */
+nav img {
+    height: 2em;
+    /* Adjust the logo size */
+    margin-left: 64em;
+    /* Space between logo and text */
+}
+
+
+nav h3 {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.5em;
+    color: white;
+    /* White text for contrast */
+    margin: 0;
+    cursor: pointer;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    /* Adding shadow to text */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the text */
+nav h3:hover {
+    color: #11ec8296;
+    /* Change color on hover */
+    transform: scale(1.2);
+    /* Slightly enlarge the text */
+}
+
+
+/* Question Text */
+#question1 h1 {
+    font-size: 2.5em;
+    /* Larger font for the question */
+    margin-bottom: 0.8em;
+    color: #333d29;
+    display: flex;
+    justify-content: center;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    opacity: 0;
+    /* Start as invisible */
+    transform: translateX(-100%);
+    /* Start off-screen */
+    animation: slideIn 1s forwards;
+    /* Apply the animation */
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        /* Start invisible */
+        transform: translateX(-100%);
+        /* Start off to the left */
+    }
+
+    100% {
+        opacity: 1;
+        /* Fully visible */
+        transform: translateX(0);
+        /* Slide into the center */
+    }
+}
+
+#moodvalues {
+    display: flex;
+    /* Enables flexbox on the parent container */
+    flex-direction: row;
+    /* Ensures the items are aligned horizontally */
+    justify-content: space-evenly;
+    /* Evenly spaces the items */
+    align-items: center;
+    /* Centers items vertically if they are of different heights */
+    flex-wrap: wrap;
+    /* Allows wrapping if needed (you can remove this if you don’t need wrapping) */
+}
+
+#moodvalues span {
+    font-size: 1em;
+    /* Font size */
+    color: #333d29;
+    /* Text color */
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    /* Font weight */
+    font-style: normal;
+    margin: 0.5em 2.75em;
+    /* Optional: Adds space between spans */
+}
+
+
+/* Mood Options Container */
+.mood-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* Distribute items evenly */
+    flex-wrap: wrap;
+}
+
+
+.emotion-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    /* Ensures images are not distorted */
+    margin: 10px;
+    transition: transform 0.2s ease-in-out;
+    /* Smooth scaling */
+}
+
+.emotion-img:hover {
+    transform: scale(1.1);
+}
+
+.emotion-img:nth-of-type(1) {
+    height: 10em;
+    width: 8em;
+}
+
+.emotion-img:nth-of-type(2) {
+    height: 8em;
+    width: 6em;
+}
+
+.emotion-img:nth-of-type(3) {
+    height: 9.5em;
+    width: 7.5em;
+}
+
+.emotion-img:nth-of-type(4) {
+    height: 10em;
+    width: 6em;
+}
+
+.emotion-img:nth-of-type(5) {
+    height: 10em;
+    width: 7em;
+}
+
+.emotion-img:nth-of-type(6) {
+    height: 10em;
+    width: 8em;
+}
+
+.emotion-img:nth-of-type(7) {
+    height: 12em;
+    width: 8em;
+}
+
+.emotion-img:nth-of-type(8) {
+    height: 10em;
+    width: 8em;
+}
+
+.emotion-img:nth-of-type(9) {
+    height: 10em;
+    width: 6em;
+}
+
+.popup {
+    opacity: 0;
+    transform: scale(0.5);
+    /* Start small */
+    animation: popUp 0.5s forwards;
+    animation-delay: 1s;
+    /* Delay to start after the h1 animation */
+}
+
+/* Keyframes for popping up */
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        /* Start small */
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        /* Return to normal size */
+    }
+}
+
+/* Fade-out effect for page transition */
+.fade-out {
+    opacity: 0;
+    transition: opacity 1.5s ease-out;
+    /* Adjust the timing here to match your delay */
+}

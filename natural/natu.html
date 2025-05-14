@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food & Beverages from Natural Resources</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #eaebc4;
+    }
+    h1 {
+      color: #3d5a45;
+      display:inline;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #acae757d;
+  border:none;
+  border-radius: 2em;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #333;
+
+    }
+    button:hover {
+      background-color: #80a88c;
+    }
+    .results {
+      margin-top: 20px;
+    }
+    .card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 15px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .card a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    .card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Food from natural resources</h1>
+  <button style="display:inline;margin-left:700px;" onclick="tojoke()">FreshenUp!</button>
+  <form id="naturalSourceForm">
+    <label for="naturalSource">Enter Natural Source:</label>
+    <input type="text" id="naturalSource" name="naturalSource" placeholder="e.g., plants" required>
+    <button type="submit">Fetch Data</button>
+  </form>
+  <div class="results" id="results"></div>
+
+  <script>
+    
+    function tojoke() {
+  setTimeout(function() {
+    window.location.href = '../joke/joke.html'; // Replace with the actual URL of the next page
+  }, 1000); // Add a delay (e.g., 3000 ms = 3 seconds)
+}
+
+
+    document.getElementById('naturalSourceForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const naturalSource = document.getElementById('naturalSource').value;
+      const resultsDiv = document.getElementById('results');
+
+      // Clear previous results
+      resultsDiv.innerHTML = '';
+
+      try {
+        // Fetch data from the API
+        const response = await fetch(`https://cosylab.iiitd.edu.in/api/entity/getentitiesbynaturalsource/${encodeURIComponent(naturalSource)}`);
+        
+        if (!response.ok) {
+          throw new Error(`Error fetching data: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        // Display results
+        if (data.length === 0) {
+          resultsDiv.innerHTML = '<p>No data found for the given natural source.</p>';
+        } else {
+          data.forEach(entity => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+              <p><strong>Category:</strong> ${entity.category_readable || 'Unknown'}</p>
+              <p><strong>Food/Beverage:</strong> ${entity.entity_alias || 'Not available'}</p>
+              <p><strong>URL to follow:</strong> 
+                ${entity.entity_alias_url 
+                  ? `<a href="${entity.entity_alias_url}" target="_blank">${entity.entity_alias_url}</a>` 
+                  : 'Not available'}
+              </p>
+              <p><strong>Read more about the natural source you entered here:</strong> 
+                ${entity.natural_source_url 
+                  ? `<a href="${entity.natural_source_url}" target="_blank">${entity.natural_source_url}</a>` 
+                  : 'Not available'}
+              </p>
+            `;
+            resultsDiv.appendChild(card);
+          });
+        }
+      } catch (error) {
+        resultsDiv.innerHTML = `<p style="color: red;">${error.message}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

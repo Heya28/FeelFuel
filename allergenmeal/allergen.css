@@ -1,0 +1,186 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.get-recipes {
+    background-color: #acae757d;
+    border: none;
+    border-radius: 2em;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: #333;
+}
+
+body {
+    background-color: #eaebc4;
+    font-family: "Nunito", sans-serif;
+    display: block;
+    /* Changed from flex to block */
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    transition: all 0.5s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.video-background {
+    position: relative;
+    width: 50%;
+    /* Adjust width as needed */
+    height: 250px;
+    /* Set fixed height */
+    margin: 20px auto;
+    /* Centers the video horizontally */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    /* Ensures it behaves as a block element */
+}
+
+#natres {
+    position: absolute;
+    top: 30px; 
+    right: 45px; 
+    background-color: #acae757d;
+    border: none;
+    border-radius: 2em;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: #333;
+    margin-top:0;
+    margin-left:1100px;
+   
+}
+#get-recipes {
+ 
+    background-color: #acae757d;
+    border: none;
+    border-radius: 2em;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: #333;
+   
+}
+#natres:hover{
+    transform: scale(2);
+    transition:transform 1s;
+}
+
+
+
+.video-background video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+}
+
+/* Main Heading */
+h1 {
+    font-size: 2.5em;
+    color: #333d29;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Styling */
+#recipe-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: 0 auto;
+    height: auto;
+    /* Adjust height to auto for better control */
+    transition: transform 0.3s ease-in-out;
+}
+
+#recipe-form label {
+    font-size: 1em;
+    color: #333d29;
+    font-weight: 600;
+}
+
+#recipe-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#recipe-form button {
+    background-color: #11ec8296;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#recipe-form button:hover {
+    background-color: #10b56b;
+    transform: scale(1.05);
+}
+
+/* Results Section */
+#results {
+    margin-top: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Page Transition Effect */
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+}
